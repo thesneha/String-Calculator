@@ -65,6 +65,16 @@ class DemoApplicationTests {
 		assertEquals(3, demoApplication.add("//;\n1;2"));
 	}
 
+	@Test
+	public void repetingDelimiter(){
+		assertEquals(8, demoApplication.add("//[%%%%]\n1%%%%2%%%%5"));
+	}
+
+	@Test
+	public void multipleDelimiter(){
+		assertEquals(10, demoApplication.add("//[%%%%][;;;]\n1%%%%2%%%%5;;;2"));
+	}
+
 
 
 
