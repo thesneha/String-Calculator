@@ -60,6 +60,12 @@ class DemoApplicationTests {
 		}
 	}
 
+	@Test
+	public void OtherDelimiter(){
+		assertEquals(3, demoApplication.add("//;\n1;2"));
+	}
+
+
 
 
 }

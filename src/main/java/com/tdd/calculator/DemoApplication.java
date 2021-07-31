@@ -7,7 +7,7 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		DemoApplication demoApplication =new DemoApplication();
-		System.out.println(demoApplication.add("3\n4,1100"));
+		System.out.println(demoApplication.add("//;\n1;2"));
 	}
 
 	public  int add(String numbers){
@@ -17,6 +17,10 @@ public class DemoApplication {
 		}
 		else {
 			String delimiter=",";
+			if(numbers.matches("//(.*)\n(.*)")){
+				delimiter = Character.toString(numbers.charAt(2));
+				numbers= numbers.substring(4);
+			}
 
 			delimiter=delimiter+ "|\n";
 			String []digits= numbers.split(delimiter);
