@@ -33,6 +33,11 @@ class DemoApplicationTests {
 		assertEquals(6, demoApplication.add("1,2,3"));
 	}
 
+	@Test
+	public void newLine(){
+		assertEquals(12, demoApplication.add("3\n4,5"));
+	}
+
 
 
 }

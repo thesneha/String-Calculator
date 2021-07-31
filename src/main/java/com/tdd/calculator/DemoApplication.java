@@ -7,7 +7,7 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		DemoApplication demoApplication =new DemoApplication();
-		System.out.println(demoApplication.add(""));
+		System.out.println(demoApplication.add("3\n4,5"));
 	}
 
 	public  int add(String numbers){
@@ -18,6 +18,7 @@ public class DemoApplication {
 		else {
 			String delimiter=",";
 
+			delimiter=delimiter+ "|\n";
 			String []digits= numbers.split(delimiter);
 			int result= sum(digits);
 			return result;
