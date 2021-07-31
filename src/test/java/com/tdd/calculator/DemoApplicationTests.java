@@ -38,6 +38,28 @@ class DemoApplicationTests {
 		assertEquals(12, demoApplication.add("3\n4,5"));
 	}
 
+	@Test
+	public void greaterThanThousand(){
+		assertEquals(1, demoApplication.add("1001,1"));
+	}
+
+	@Test
+	public void negativeNumber(){
+		try {
+			demoApplication.add("-1,2");
+		}
+		catch (IllegalArgumentException e){
+			assertEquals(e.getMessage(), "Negatives not allowed: -1");
+		}
+
+		try {
+			demoApplication.add("2,-10,3,-5");
+		}
+		catch (IllegalArgumentException e){
+			assertEquals(e.getMessage(), "Negatives not allowed: -10,-5");
+		}
+	}
+
 
 
 }
